@@ -7,16 +7,12 @@
 
 **RxRelayed** is a lightweight Swift Property Wrapper that eliminates boilerplate code when using `BehaviorRelay` and `Driver` in RxSwift. It allows you to handle state as a standard property while maintaining the power of reactive streams.
 
----
-
 ## 🚀 Features
 
-* **Zero Boilerplate**: No more manual `_relay` and `asDriver()` declarations.
-* **Property-like Syntax**: Mutate and access values directly using the `=` operator.
-* **Automatic Projection**: Access the `Driver` stream instantly using the `$` prefix.
-* **Thread-Safe**: Built on top of `BehaviorRelay` for safe state management.
-
----
+- **Zero Boilerplate**: No more manual `_relay` and `asDriver()` declarations.
+- **Property-like Syntax**: Mutate and access values directly using the `=` operator.
+- **Automatic Projection**: Access the `Driver` stream instantly using the `$` prefix.
+- **Thread-Safe**: Built on top of `BehaviorRelay` for safe state management.
 
 ## 📦 Installation
 
@@ -26,11 +22,22 @@ Add the following to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "[https://github.com/mandooplz/RxRelayed.git](https://github.com/mandooplz/RxRelayed.git)", from: "1.0.0")
+    .package(url: "https://github.com/mandooplz/RxRelayed.git", branch: "main")
 ]
 ```
 
----
+Then add `RxRelayed` to your target's dependencies:
+
+```swift
+targets: [
+    .target(
+        name: "YourTarget",
+        dependencies: [
+            "RxRelayed"
+        ]
+    )
+]
+```
 
 ## 💻 Usage
 
@@ -45,7 +52,7 @@ final class UserViewModel {
     // Declares a BehaviorRelay with an initial value
     @Relayed var userName: String = "Guest"
     @Relayed var isVip: Bool = false
-    
+
     func updateName(to newName: String) {
         // Direct mutation (calls .accept() internally)
         userName = newName
@@ -67,12 +74,12 @@ final class UserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Use '$' to bind the projected Driver
         viewModel.$userName
             .drive(nameLabel.rx.text)
             .disposed(by: disposeBag)
-            
+
         viewModel.$isVip
             .drive(vipBadge.rx.isHidden.map { !$0 })
             .disposed(by: disposeBag)
@@ -80,7 +87,9 @@ final class UserViewController: UIViewController {
 }
 ```
 
---- 
+## Examples
+
+- [UserBoard (UIKit)](Example/README.md)
 
 ## 🛠 Requirements
 
