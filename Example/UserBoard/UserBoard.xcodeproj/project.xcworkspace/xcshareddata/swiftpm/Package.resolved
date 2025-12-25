@@ -1,0 +1,33 @@
+{
+  "originHash" : "76f4c389c91fe4bba67f471ba0408c8bf7218f4d639a86cf4e029a8797a99465",
+  "pins" : [
+    {
+      "identity" : "rxrelayed",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:mandooplz/RxRelayed.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "98d068b9e7146d9f849d72d2a598e317ebf7b890"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5004a18539bd68905c5939aa893075f578f4f03d"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
+        "version" : "5.7.1"
+      }
+    }
+  ],
+  "version" : 3
+}
