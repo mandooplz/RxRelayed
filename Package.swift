@@ -25,6 +25,7 @@ let package = Package(
         .target(
             name: "RxRelayed",
             dependencies: [
+                "RxRelayedMacros",
                 .product(name: "RxSwift", package: "RxSwift"),
                 .product(name: "RxCocoa", package: "RxSwift")
             ]
@@ -33,7 +34,6 @@ let package = Package(
             name: "RxRelayedTests",
             dependencies: [
                 "RxRelayed",
-                "RxRelayedMacros",
                 .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
             ]
         ),
