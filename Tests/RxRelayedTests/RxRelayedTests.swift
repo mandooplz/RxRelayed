@@ -1,7 +1,6 @@
-//
-//  RxRelayedTests.swift
-//  RxRelayed
-//
-//  Created by 김민우 on 12/30/25.
-//
+import Testing
+@testable import RxRelayed
 
+@Test func example() async throws {
+    // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+}
