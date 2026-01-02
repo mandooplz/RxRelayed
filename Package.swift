@@ -16,14 +16,16 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", branch: "main")
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", branch: "main"),
+        .package(url: "https://github.com/CombineCommunity/RxCombine.git", branch: "main")
     ],
     targets: [
         .target(
             name: "RxRelayed",
             dependencies: [
                 .product(name: "RxSwift", package: "RxSwift"),
-                .product(name: "RxCocoa", package: "RxSwift")
+                .product(name: "RxCocoa", package: "RxSwift"),
+                .product(name: "RxCombine", package: "RxCombine")
             ]
         ),
         .testTarget(
